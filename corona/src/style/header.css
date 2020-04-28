@@ -1,0 +1,50 @@
+.navbar {
+  min-height: 120px;
+}
+
+.padding {
+  padding-top: 120px;
+}
+
+.home-rect {
+  width: 340px;
+  height: 50px;
+  background: rgba(196, 196, 196, 0.25);
+  border-radius: 5px;
+}
+.home-search-text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  text-align: left;
+
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0);
+
+  border: none;
+  outline: none;
+}
+.home-search-line {
+  width: 40px;
+  height: 0px;
+
+  border: 2px solid #d2d2d2;
+  transform: rotate(90deg);
+}
+.home-sign-in {
+  color: #a7a7a7;
+}
+.home-transparent {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.home-icons {
+  position: relative;
+  left: -7px;
+  width: 35px;
+  height: 35px;
+}

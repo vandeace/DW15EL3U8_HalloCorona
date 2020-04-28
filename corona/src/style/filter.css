@@ -1,0 +1,82 @@
+/*=======================================
+            FILTER COMPONENTS
+========================================*/
+.filter-bold-text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 33px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  color: #000000;
+}
+
+.filter-regular-text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  justify-items: center;
+  color: #000000;
+}
+
+.home-date-rect {
+  min-width: 275px;
+  min-height: 50px;
+
+  background: rgba(196, 196, 196, 0.25);
+  border-radius: 5px;
+}
+
+.home-date-calendar {
+  position: relative;
+  left: 15px;
+}
+
+.home-date-line {
+  position: relative;
+  left: 10px;
+  width: 40px;
+  height: 0px;
+
+  border: 2px solid #d2d2d2;
+  transform: rotate(90deg);
+}
+
+.home-budget-rect {
+  position: relative;
+  left: 10px;
+  min-width: 200px;
+  min-height: 50px;
+
+  background: rgba(196, 196, 196, 0.25);
+  border-radius: 5px;
+}
+
+.home-budget-text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+  text-align: left;
+
+  color: #000000;
+
+  border: none;
+  outline: none;
+}
+
+.btn {
+  margin-left: 30px;
+}
+
+.check {
+  margin-left: 30px;
+}

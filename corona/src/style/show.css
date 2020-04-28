@@ -1,0 +1,25 @@
+.flex-container {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+.flex-container:hover {
+  text-decoration: none !important;
+}
+
+.content-bg {
+  background: rgba(196, 196, 196, 0.25);
+}
+
+.header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ff6185;
+}

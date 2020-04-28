@@ -1,0 +1,55 @@
+.transaction-item-area {
+  width: 1300px;
+  height: 75px;
+  background: #ffffff;
+}
+
+.transaction-item-area-grey {
+  width: 1300px;
+  height: 75px;
+  background: #f9f9f9;
+}
+
+.transaction-item-text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+
+  position: relative;
+  top: 25px;
+
+  color: #000000;
+}
+
+.transaction-item-line {
+  position: relative;
+  width: 90%;
+  height: 0px;
+  top: 50px;
+  left: -15px;
+
+  border: 1px solid rgba(183, 183, 183, 0.5);
+}
+
+.color-green {
+  color: #0acf83;
+}
+
+.color-orange {
+  color: #f7941e;
+}
+
+.color-red {
+  color: #ff0742;
+}
+
+.action-area {
+  position: relative;
+  left: -310px;
+  width: 1100px;
+  height: 570px;
+
+  background: #ffffff;
+  border-radius: 5px;
+}
