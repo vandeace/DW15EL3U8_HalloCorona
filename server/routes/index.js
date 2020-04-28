@@ -3,7 +3,8 @@ const router = express.Router();
 const { login, register } = require('../controllers/auth');
 const {
   create: createArticle,
-  index: showArticle,
+  index: indexArticle,
+  show: showArticle,
 } = require('../controllers/article');
 const {
   show: showUser,
@@ -31,7 +32,8 @@ router.delete('/user', protected, deleteUser);
 
 //========ARTICLE ACTION=======================
 router.post('/article', protected, createArticle);
-router.get('/article', showArticle);
+router.get('/article', indexArticle);
+router.get('/article/:id', showArticle);
 
 //========CONSULT ACTION=======================
 router.post('/consultation', protected, createConsult);

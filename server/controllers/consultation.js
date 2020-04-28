@@ -6,7 +6,7 @@ const consultParams = {
       attributes: ['id', 'username'],
     },
   ],
-  attributes: { exclude: ['createdAt', 'updatedAt', 'UserId', 'userId'] },
+  attributes: { exclude: ['updatedAt', 'UserId', 'userId'] },
 };
 
 exports.create = async (req, res) => {

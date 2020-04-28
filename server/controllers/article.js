@@ -35,7 +35,7 @@ exports.index = async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['username', 'id', 'status'],
         },
       ],
       where: {
@@ -43,6 +43,27 @@ exports.index = async (req, res) => {
           [Op.gt]: TODAY_START,
           [Op.lt]: NOW,
         },
+      },
+      attributes: { exclude: ['updatedAt', 'UserId', 'userId'] },
+    });
+    res.status(200).send({ data: article });
+  } catch (error) {
+    res.status(500).send({ message: 'Failed to Show Houses!' });
+    console.log(error);
+  }
+};
+
+exports.show = async (req, res) => {
+  try {
+    const article = await Article.findOne({
+      include: [
+        {
+          model: User,
+          attributes: ['username', 'id', 'status'],
+        },
+      ],
+      where: {
+        id: req.params.id,
       },
       attributes: { exclude: ['updatedAt', 'UserId', 'userId'] },
     });

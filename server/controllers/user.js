@@ -8,7 +8,7 @@ exports.show = async (req, res) => {
     });
     res.status(200).send({ data: users });
   } catch (error) {
-    res.status(500).send({ message: 'CANT FIND THE USER CHECK YOURE METHOD ' });
+    res.status(500).send({ message: 'CANT FIND THE USER  ' });
     console.log(error);
   }
 };

@@ -20,7 +20,7 @@ exports.create = async (req, res) => {
             },
           },
         ],
-        where: { consultationId: req.params.id },
+        where: { id: req.params.id },
         attributes: {
           exclude: [
             'createdAt',
