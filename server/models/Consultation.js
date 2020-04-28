@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       fullName: DataTypes.STRING,
       phone: DataTypes.INTEGER,
+      userId: DataTypes.INTEGER,
       bornDate: DataTypes.STRING,
       age: DataTypes.INTEGER,
       height: DataTypes.INTEGER,
@@ -13,7 +14,15 @@ module.exports = (sequelize, DataTypes) => {
       subject: DataTypes.STRING,
       liveConsult: DataTypes.STRING,
       description: DataTypes.STRING,
-      status: DataTypes.STRING,
+      status: {
+        type: DataTypes.ENUM,
+        values: [
+          'Waiting Approve Consultation Live',
+          'Waiting Live Consultation',
+          'Cancel',
+        ],
+        defaultValue: 'Waiting Approve Consultation Live',
+      },
     },
     {}
   );

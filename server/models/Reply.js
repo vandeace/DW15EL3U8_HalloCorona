@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     'Reply',
     {
       reply: DataTypes.STRING,
+      consultationId: DataTypes.INTEGER,
     },
     {}
   );
