@@ -1,4 +1,4 @@
-import { GET_ARTICLES } from '../_store/action-types';
+import { GET_ARTICLES, POST_ARTICLES } from '../_store/action-types';
 
 const initialState = {
   data: [],
@@ -9,17 +9,20 @@ const initialState = {
 const reducerArticle = (state = initialState, action) => {
   switch (action.type) {
     case `${GET_ARTICLES}_PENDING`:
+    case `${POST_ARTICLES}_PENDING`:
       return {
         ...state,
         loading: true,
       };
     case `${GET_ARTICLES}_FULFILLED`:
+    case `${POST_ARTICLES}_FULFILLED`:
       return {
         ...state,
         data: action.payload.data.data,
         loading: false,
       };
     case `${GET_ARTICLES}_REJECTED`:
+    case `${POST_ARTICLES}_REJECTED`:
       return {
         ...state,
         loading: false,

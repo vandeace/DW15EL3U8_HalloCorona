@@ -6,7 +6,7 @@ import reducerConsultation from '../_reducers/consult';
 const rootReducer = combineReducers({
   article: reducerArticle,
   user: reducerUser,
-  order: reducerConsultation,
+  consultation: reducerConsultation,
 });
 
 const store = createStore(rootReducer, applyMiddleware(logger, promise));

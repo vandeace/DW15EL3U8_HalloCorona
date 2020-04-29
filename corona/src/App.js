@@ -5,6 +5,7 @@ import Article from './pages/article';
 import Profile from './pages/profile';
 import AddArticle from './pages/add_article';
 import FormConsultation from './pages/form_consult';
+import Reservation from './pages/user_reservation';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/profile' exact component={Profile} />
           <Route path='/addArticle' exact component={AddArticle} />
           <Route path='/form' exact component={FormConsultation} />
+          <Route path='/reservation' exact component={Reservation} />
           {/*
           <Route path='/addproperty' exact component={AddProperty} />
           <Route path='/booking' exact component={Booking} />

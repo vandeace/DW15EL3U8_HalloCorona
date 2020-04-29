@@ -6,7 +6,7 @@ const consultParams = {
       attributes: ['id', 'username'],
     },
   ],
-  attributes: { exclude: ['updatedAt', 'UserId', 'userId'] },
+  attributes: { exclude: ['updatedAt', 'UserId'] },
 };
 
 exports.create = async (req, res) => {
@@ -50,13 +50,18 @@ exports.update = async (req, res) => {
 
 exports.index = async (req, res) => {
   try {
+    id = req.user.id;
     if (req.user.status === 'doctor') {
       const consult = await Consultation.findAll({
         ...consultParams,
       });
       res.status(200).send({ data: consult });
     } else {
-      res.status(401).send({ message: 'Unauthorized' });
+      const consult = await Consultation.findAll({
+        ...consultParams,
+        where: { userId: id },
+      });
+      res.status(200).send({ data: consult });
     }
   } catch (error) {
     res.status(500).send({ message: 'you failed to update data' });
