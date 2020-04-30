@@ -13,7 +13,7 @@ class index_doctor extends Component {
   }
 
   render() {
-    const datas = this.props.order;
+    const datas = this.props.consul;
     console.log(datas);
     const consultation = datas.data.map((item, index) => (
       <Consult item={item} key={index} />
@@ -58,7 +58,7 @@ class index_doctor extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    order: state.order,
+    consul: state.consultation,
   };
 };
 

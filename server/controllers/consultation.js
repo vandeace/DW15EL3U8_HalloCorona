@@ -18,7 +18,7 @@ exports.create = async (req, res) => {
         ...consultParams,
         where: { id: newConsult.id },
       });
-      res.status(200).send({ data: consult });
+      res.status(200).send({ data: consult, status: 'success' });
     } else {
       res.status(401).send({ message: 'Unauthorized' });
     }

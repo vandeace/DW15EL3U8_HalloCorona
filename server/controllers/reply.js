@@ -44,18 +44,10 @@ exports.create = async (req, res) => {
 exports.show = async (req, res) => {
   try {
     // const consultId = req.body.consultationId;
-    const reply = await Reply.findOne({
-      include: [
-        {
-          model: Consultation,
-          attributes: {
-            exclude: ['createdAt', 'updatedAt', 'userId', 'UserId'],
-          },
-        },
-      ],
-      where: { consultationId: req.params.id },
+    const reply = await Reply.findAll({
+      // where: { id: req.params.id },
       attributes: {
-        exclude: ['createdAt', 'updatedAt', 'consultationId', 'ConsultationId'],
+        exclude: ['createdAt', 'updatedAt', 'ConsultationId'],
       },
     });
     res.status(200).send({ data: reply });

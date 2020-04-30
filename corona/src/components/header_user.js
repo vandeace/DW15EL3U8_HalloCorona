@@ -1,74 +1,94 @@
 import React, { Component } from 'react';
-import { Navbar, Dropdown, Container, Row, Col } from 'react-bootstrap';
-import { Link, Redirect } from 'react-router-dom';
+import { Navbar, Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class header_user extends Component {
-  logout = () => {
-    localStorage.getItem('auth');
+export default class header_user extends Component {
+  state = {
+    logout: null,
+  };
+
+  handleSignOut = () => {
     localStorage.clear();
-    window.location.reload(true);
-    // const status = this.props.users.data.status;
-    // if (!status) {
-    //   return <Redirect to='/' />;
-    // }
+    this.setState({ logout: true });
   };
 
   render() {
+    if (this.state.logout) {
+      window.location.href = '/';
+    }
     return (
       <div>
-        <Dropdown>
-          <Dropdown.Toggle
-            style={{
-              background: 'white',
-              border: 'white',
-              boxShadow: 'none',
-            }}
-          >
-            <img
-              src={process.env.PUBLIC_URL + `../logos/login.png`}
-              alt=''
-            ></img>
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item href='' style={{ paddingRight: '50px' }}>
-              <Link to='/profile'>
+        <Navbar bg='white' expand='lg' className='shadows py-2 px-2'>
+          <div className='col-lg-2'>
+            <Link to='/'>
+              <img
+                style={{ height: '55px' }}
+                src={process.env.PUBLIC_URL + '/logos/home.svg'}
+              />
+            </Link>
+          </div>
+
+          <div className='col-lg-9'></div>
+          <div className='col-lg-1 mr-0'>
+            <Dropdown style={{ marginRight: 0, marginLeft: 70 }}>
+              <Dropdown.Toggle
+                className='nav-link dropdown-toggle p-0 m-0'
+                style={{ borderRadius: 50 }}
+              >
                 <img
-                  src={process.env.PUBLIC_URL + `../logos/user.png`}
+                  src={process.env.PUBLIC_URL + `../logos/login.png`}
                   alt=''
+                  className='avatar'
+                  style={{ height: 50, width: 50, borderRadius: 45 }}
                 />
-                <h1>profile</h1>
-              </Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to='./form'>
-                <img
-                  src={process.env.PUBLIC_URL + `../logos/consult.png`}
-                  alt=''
-                />
-                <h1>Consultation</h1>
-              </Link>
-            </Dropdown.Item>
-            <Dropdown.Item href='' style={{ borderTop: '3px solid grey' }}>
-              <span onClick={this.logout}>
-                <img
-                  src={process.env.PUBLIC_URL + `../logos/logout.png`}
-                  alt=''
-                />
-                <h1>Logout</h1>
-              </span>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className='dropdown-menu-right mt-3'>
+                <Link to='/profile' className='dropdown-item'>
+                  <img
+                    src={process.env.PUBLIC_URL + `../logos/user.png`}
+                    alt=''
+                    className='mr-2'
+                  />
+                  <span style={{}}>Profile</span>
+                </Link>
+
+                <Link to='./form' className='dropdown-item'>
+                  <img
+                    src={process.env.PUBLIC_URL + `../logos/consult.png`}
+                    alt=''
+                    className='mr-2'
+                  />
+                  Consultation
+                </Link>
+
+                <Link to='./reservation' className='dropdown-item'>
+                  <img
+                    src={process.env.PUBLIC_URL + `../logos/article.png`}
+                    alt=''
+                    className='mr-2'
+                  />
+                  Reservation
+                </Link>
+                <div className='divider'></div>
+                <div
+                  className='dropdown-item'
+                  onClick={this.handleSignOut}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <img
+                    src={process.env.PUBLIC_URL + `../logos/logout.png`}
+                    alt=''
+                    className='mr-2'
+                  />
+                  Logout
+                </div>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+        </Navbar>
       </div>
     );
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    users: state.user,
-  };
-};
-
-export default connect(mapStateToProps)(header_user);

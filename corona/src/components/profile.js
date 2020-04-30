@@ -9,7 +9,7 @@ class Profile extends Component {
   };
 
   componentDidMount() {
-    const data = JSON.parse(localStorage.getItem('credentials'));
+    const data = JSON.parse(localStorage.getItem('credentials')) || '';
     this.props.dispatch(actUser.getUsers(data.token));
   }
 

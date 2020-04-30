@@ -11,6 +11,7 @@ class Reservation extends Component {
     this.state = {
       data: {},
       loading: false,
+      success: false,
     };
   }
 
@@ -44,19 +45,24 @@ class Reservation extends Component {
     });
   };
 
-  handleSubmit = () => {
+  handleSubmit = async () => {
     const datas = JSON.parse(localStorage.getItem('credentials'));
     const data = this.state.data;
-    this.props.dispatch(actConsult.postConsult(datas.token, data));
+    await this.props.dispatch(actConsult.postConsult(datas.token, data));
+    await this.props.dispatch(actConsult.getConsult(datas.token));
+    this.setState({
+      data: '',
+      success: true,
+    });
   };
 
   render() {
     const { data } = this.state;
 
-    const { data: consul, loading, error, success } = this.props.consul;
+    const { data: consul, loading } = this.props.consul;
 
     if (loading) return <h1>Loading</h1>;
-    if (success) return <Redirect to='/profile' />;
+    if (this.state.success) return <Redirect to='/reservation' />;
 
     return (
       <>

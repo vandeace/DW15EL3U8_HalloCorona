@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actArticle from '../_actions/article';
-import Header from './login';
+import { Redirect } from 'react-router-dom';
 
 class add_article extends Component {
   state = {
     data: {},
+    success: false,
   };
 
   handleChangeTxt = (e) => {
@@ -27,11 +28,18 @@ class add_article extends Component {
     };
 
     this.props.dispatch(actArticle.postArticles(datas.token, data));
+
+    this.setState({
+      data: '',
+      success: true,
+    });
   };
 
   render() {
     const { data } = this.state;
     const { data: art, loading, error } = this.props;
+
+    if (this.state.success) return <Redirect to='/' />;
     return (
       <>
         <div className='container margin-top pb-5'>
@@ -58,7 +66,7 @@ class add_article extends Component {
                   name='description'
                   className='forms'
                   type='text'
-                  rows='20'
+                  rows='40'
                 />
               </div>
             </div>

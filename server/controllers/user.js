@@ -6,7 +6,7 @@ exports.show = async (req, res) => {
       where: { id: req.user.id },
       attributes: { exclude: ['createdAt', 'updatedAt'] },
     });
-    res.status(200).send({ data: users });
+    res.status(200).send({ data: users, status: 'success' });
   } catch (error) {
     res.status(500).send({ message: 'CANT FIND THE USER  ' });
     console.log(error);

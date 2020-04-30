@@ -42,5 +42,6 @@ router.get('/index', protected, showAll);
 
 //========REPLY ACTION=======================
 router.post('/consultation/:id/reply', protected, createReply);
-router.get('/consultation/:id/reply', protected, showReply);
+// router.get('/reply/:id/', protected, showReply);
+router.get('/reply', protected, showReply);
 module.exports = router;

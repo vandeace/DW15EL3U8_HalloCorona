@@ -161,7 +161,7 @@ button:focus {
   outline: none !important;
   padding-left: 15px;
   width: 100%;
-  height: 50px;
+  height: 300px;
   background: rgba(210, 210, 210, 0.25);
   border: 2px solid rgba(210, 210, 210, 0.25);
   box-sizing: border-box;
@@ -310,7 +310,29 @@ a:hover {
 }
 
 .btn-sign {
-  width: 100px;
+  width: 150px;
+  color: #ff6185;
+  border: 2px solid #ff6185;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+.btn:hover {
+  color: whitesmoke;
+  border: 2px solid #ff6185;
+  background-color: #ff6185;
+}
+
+.btn-signup {
+  width: 150px;
+  color: whitesmoke;
+  background-color: #ff6185;
+  border-radius: 20px;
+}
+.btn-x:hover {
+  color: #ff6185;
+  border: 2px solid #ff6185;
+  background-color: whitesmoke;
 }
 
 .btn-profile {
@@ -477,7 +499,7 @@ b {
 .ellipsis-title {
   display: block;
   display: -webkit-box;
-  max-width: 400px;
+  max-width: 300px;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -489,8 +511,8 @@ b {
   display: -webkit-box;
   max-width: 400px;
   margin: 0 auto;
-  line-height: 1.2;
-  -webkit-line-clamp: 2;
+  line-height: 1.5;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

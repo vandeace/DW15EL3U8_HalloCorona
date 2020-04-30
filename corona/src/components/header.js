@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import {
-  Nav,
-  Navbar,
-  Form,
-  Container,
-  FormControl,
-  Button,
-  Modal,
-} from 'react-bootstrap';
+import { Nav, Navbar, Form, Button, Modal } from 'react-bootstrap';
 
 export default class header extends Component {
   state = {
@@ -68,16 +60,34 @@ export default class header extends Component {
 
   render() {
     return (
-      <Container>
-        <Navbar className='justify-content-between'>
-          <Nav>
-            <Button variant='white' onClick={this.showSignIn} size='lg'>
-              Sign In
-            </Button>
-            <Button variant='dark' onClick={this.showSignUp} size='lg'>
-              Sign Up
-            </Button>
-          </Nav>
+      <>
+        <Navbar>
+          <div className='col-lg-2'>
+            <Link to='/'>
+              <img
+                style={{ height: '55px' }}
+                src={process.env.PUBLIC_URL + '/logos/home.svg'}
+              />
+            </Link>
+          </div>
+
+          <div className='col-lg-8'></div>
+          <div className='col-lg-2'>
+            <div className='d-flex'>
+              <button
+                className='btn-sign btn mr-3 font-weight-bold'
+                onClick={this.showSignIn}
+              >
+                Sign In
+              </button>
+              <button
+                className='btn-signup btn btn-x btn-light font-weight-bold'
+                onClick={this.showSignUp}
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
         </Navbar>
 
         <Modal
@@ -138,7 +148,7 @@ export default class header extends Component {
             </p>
           </Modal.Footer>
         </Modal>
-      </Container>
+      </>
     );
   }
 }
