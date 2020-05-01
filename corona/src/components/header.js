@@ -75,13 +75,13 @@ export default class header extends Component {
           <div className='col-lg-2'>
             <div className='d-flex'>
               <button
-                className='btn-sign btn mr-3 font-weight-bold'
+                className='btn-sign btn btn-signin mr-3 font-weight-bold'
                 onClick={this.showSignIn}
               >
                 Sign In
               </button>
               <button
-                className='btn-signup btn btn-x btn-light font-weight-bold'
+                className='btn-signup btn btn-signup btn-light font-weight-bold'
                 onClick={this.showSignUp}
               >
                 Sign Up
@@ -91,17 +91,18 @@ export default class header extends Component {
         </Navbar>
 
         <Modal
-          size='lg'
+          size='md'
           centered
           show={this.state.signIn}
           onHide={this.closeSignIn}
+          className='custom-map-modal modal-x'
         >
           <Modal.Header closeButton></Modal.Header>
           <Modal.Body>
             <Form>
-              <h1 style={{ textAlign: 'center' }}>SIGN IN</h1>
-              <Form.Group controlId='formBasicEmail'>
-                <Form.Label>Email address</Form.Label>
+              <h1 style={{ textAlign: 'center', color: '#ff6185' }}>LOGIN</h1>
+              <Form.Group>
+                <Form.Label className='bold'>Username</Form.Label>
                 <Form.Control
                   name='username'
                   type='text'
@@ -121,14 +122,10 @@ export default class header extends Component {
                   value={this.state.password}
                 />
               </Form.Group>
-              <Form.Group controlId='formBasicCheckbox'>
-                <Form.Text className='text-muted'>
-                  Dont have an account? Click Here
-                </Form.Text>
-              </Form.Group>
+
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <Button
-                  variant='primary'
+                  className='btn-sign btn btn-signin font-weight-bold'
                   style={{ display: 'flex', justifyContent: 'center' }}
                   onClick={this.handleLogin}
                 >

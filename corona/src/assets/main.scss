@@ -317,7 +317,7 @@ a:hover {
   border-radius: 20px;
 }
 
-.btn:hover {
+.btn-signin:hover {
   color: whitesmoke;
   border: 2px solid #ff6185;
   background-color: #ff6185;
@@ -329,10 +329,15 @@ a:hover {
   background-color: #ff6185;
   border-radius: 20px;
 }
-.btn-x:hover {
+.btn-signup:hover {
   color: #ff6185;
   border: 2px solid #ff6185;
   background-color: whitesmoke;
+}
+
+.modal-x {
+  border: 2px solid #ff6185;
+  border-radius: 20px;
 }
 
 .btn-profile {

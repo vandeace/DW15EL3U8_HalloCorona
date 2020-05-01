@@ -20,35 +20,32 @@ class index_doctor extends Component {
     ));
     return (
       <div>
-        <div>
-          <div className='transaction-bg'>
-            <h3 className='transaction-title'>Reservasi Data</h3>
-            <div className='transaction-area'>
-              <Container fluid className='transaction-item-area'>
-                <Row>
-                  <Col xs={2} className='transaction-text'>
-                    No
-                  </Col>
-                  <Col xs={2} className='transaction-text'>
-                    Patient
-                  </Col>
-                  <Col xs={2} className='transaction-text'>
-                    Subject
-                  </Col>
-                  <Col xs={2} className='transaction-text'>
-                    Date Of Complaint
-                  </Col>
-                  <Col xs={2} className='transaction-text'>
-                    Status
-                  </Col>
-                  <Col xs={2} className='transaction-text'>
-                    Action
-                  </Col>
-                </Row>
-                <p className='transaction-item-line' />
-              </Container>
-              {consultation}
-            </div>
+        <div className='container-fluid ml-3'>
+          <div className='transaction-area'>
+            <Container fluid className='transaction-item-area'>
+              <Row>
+                <Col xs={1} className='transaction-text p-0'>
+                  No
+                </Col>
+                <Col xs={2} className='transaction-text'>
+                  Patient
+                </Col>
+                <Col xs={2} className='transaction-text'>
+                  Subject
+                </Col>
+                <Col xs={2} className='transaction-text'>
+                  Date Of Complaint
+                </Col>
+                <Col xs={3} className='transaction-text'>
+                  Status
+                </Col>
+                <Col xs={2} className='transaction-text'>
+                  Action
+                </Col>
+              </Row>
+              <p className='transaction-item-line' />
+            </Container>
+            {consultation}
           </div>
         </div>
       </div>

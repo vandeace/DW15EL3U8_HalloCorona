@@ -72,45 +72,43 @@ export default class consult_item extends Component {
     const data = this.props.item;
     return (
       <div>
-        <Container fluid className='transaction-item-area'>
-          <Row>
-            <Col xs={2} className='transaction-item-text'>
-              {data.id}
+        <Row>
+          <Col xs={1} className='transaction-item-text'>
+            {data.id}
+          </Col>
+          <Col xs={2} className='transaction-item-text'>
+            <div style={{ textTransform: 'capitalize' }}>{data.fullName}</div>
+          </Col>
+          <Col xs={2} className='transaction-item-text'>
+            <div style={{ textTransform: 'capitalize' }}>{data.subject}</div>
+          </Col>
+          <Col xs={2} className='transaction-item-text'>
+            <Moment format='YYYY-MM-DD'>{data.createdAt}</Moment>
+          </Col>
+          {data.status === 'Waiting Approve Consultation Live' && (
+            <Col xs={3} className='transaction-item-text color-orange'>
+              {data.status}
             </Col>
-            <Col xs={2} className='transaction-item-text'>
-              <div style={{ textTransform: 'capitalize' }}>{data.fullName}</div>
+          )}
+          {data.status === 'Waiting Live Consultation' && (
+            <Col xs={3} className='transaction-item-text color-green'>
+              {data.status}
             </Col>
-            <Col xs={2} className='transaction-item-text'>
-              <div style={{ textTransform: 'capitalize' }}>{data.subject}</div>
+          )}
+          {data.status === 'Cancel' && (
+            <Col xs={3} className='transaction-item-text color-red'>
+              {data.status}
             </Col>
-            <Col xs={2} className='transaction-item-text'>
-              <Moment format='YYYY-MM-DD'>{data.createdAt}</Moment>
-            </Col>
-            {data.status === 'Waiting Approve Consultation Live' && (
-              <Col xs={2} className='transaction-item-text color-orange'>
-                {data.status}
-              </Col>
-            )}
-            {data.status === 'Waiting Live Consultation' && (
-              <Col xs={2} className='transaction-item-text color-green'>
-                {data.status}
-              </Col>
-            )}
-            {data.status === 'Cancel' && (
-              <Col xs={2} className='transaction-item-text color-red'>
-                {data.status}
-              </Col>
-            )}
-            <Col xs={2} className='transaction-item-text'>
-              <img
-                src={process.env.PUBLIC_URL + `../pic/search.png`}
-                alt=''
-                onClick={this.showModal}
-              ></img>
-            </Col>
-          </Row>
-          <p className='transaction-item-line' />
-        </Container>
+          )}
+          <Col xs={2} className='transaction-item-text'>
+            <img
+              src={process.env.PUBLIC_URL + `../pic/search.png`}
+              alt=''
+              onClick={this.showModal}
+            ></img>
+          </Col>
+        </Row>
+        <p className='transaction-item-line' />
 
         <Modal
           size='xl'

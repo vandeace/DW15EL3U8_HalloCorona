@@ -7,7 +7,15 @@ export default class home_doctor extends Component {
     return (
       <div>
         <Header />
-        <Data />
+        <div
+          className='container-fluid margin-top pb-5 mainhead'
+          style={{ width: '80%' }}
+        >
+          <div className='text-center mb-5'>
+            <h2>Reservation Data</h2>
+          </div>
+          <Data />
+        </div>
       </div>
     );
   }
